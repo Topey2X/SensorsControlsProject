@@ -1,13 +1,14 @@
 % startup_rvc
 
-robot = loadrobot('abbYumi','Gravity',[0 0 -9.81]);
+% robot = loadrobot('abbYumi','Gravity',[0 0 -9.81]);
+robot = importrobot("demo.urdf");
 
 iviz = interactiveRigidBodyTree(robot);
 ax = gca;
 
 exampleHelperSetupWorkspace(ax);
 
-load abbSavedConfigs.mat configSequence
+% load abbSavedConfigs.mat configSequence
 
 % Define initial state
 q0 = configSequence(:,1); % Position
@@ -53,3 +54,5 @@ kinetic_friction_coef = 1;
 critical_velocity = 1;
 
 simout = sim('modelWithSimscapeRobotAndEnvironmentDynamics.slx');
+
+robot.teach;
