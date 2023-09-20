@@ -1,4 +1,4 @@
-% start_rvc
+% startup_rvc
 
 robot = loadrobot('abbYumi','Gravity',[0 0 -9.81]);
 
