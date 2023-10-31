@@ -24,9 +24,11 @@ load("camera_calibration.mat");
 setDobotPosition(dobot, x_default,y_default,z_up);
 openDobotGripper(dobot);
 
-%% MAIN FUNCTION
+%% Begin webcam
 webcamlist;
 cam_rgb = webcam(1); % Webcam(1) is always the realsense camera in testing
+
+%% MAIN FUNCTION
 
 % img = imread("/home/rs1/Pictures/Webcam/2023-10-30-170652.jpg"); % Testing only
 img = snapshot(cam_rgb); 
